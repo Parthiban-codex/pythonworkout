@@ -9,7 +9,7 @@ def get_db_connection():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password="",              # Put your MySQL password here
+        password="",              
         database="college_db"
     )
 
