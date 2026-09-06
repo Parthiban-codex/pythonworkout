@@ -1,11 +1,12 @@
 from flask import Flask, render_template_string, request
+import os
 import mysql.connector
 app=Flask(__name__)
 def p():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password="parthiban",
+        password=os.environ.get("DB_PASSWORD"),
         database="col"
     )
 html="""
