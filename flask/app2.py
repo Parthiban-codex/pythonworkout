@@ -1,12 +1,12 @@
 from flask import Flask,render_template,request
-import sql.connector
+import mysql.connector
 import os
 
 obj=Flask(__name__)
 def h():
-    return sql.connector.connect(
+    return mysql.connector.connect(
         host="localhost",
-        user="root"
+        user="root",
         password=os.environ.get("MYPASSWORD"),
         database="col"
     )
@@ -15,6 +15,17 @@ def h():
 def t():
     return render_template("index.html")
 
-@obj.route("/submit",method=["POST"])
+@obj.route("/submit",methods=["POST"])
 def m():
-   
+   data=request.form["data"]
+   l=h()
+   cursor=l.cursor()
+   sql="insert into html (data) values(%s)"
+   cursor.execute(sql,(data,))
+   l.commit
+   cursor.close
+   l.close
+   return "flask worked"
+
+if __name__ == "__main__":
+    obj.run(debug=True)
