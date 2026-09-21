@@ -18,3 +18,5 @@ for i in a[::-1]:
     ra.append(i)
 print(ra)
     
+    
+
