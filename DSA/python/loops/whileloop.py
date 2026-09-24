@@ -1,6 +1,7 @@
+
 #digit count
 n=int(input())
-temp=n
+temp,val=n,n
 d=0
 while n>0:
     d+=1
@@ -10,7 +11,15 @@ print(f"digit count: {d}")
 #sum of digit
 Sum=0
 while temp>0:
-    s=temp%10
+    s=temp%10 #mod-get last value
     Sum+=s
-    temp=temp//10
-print(f"sum of digit: {Sum}")    
+    temp=temp//10 #div-cutoff last value
+print(f"sum of digit: {Sum}")  
+
+#product of digit
+pro=1
+while val>0:
+    pro*=val%10
+    val=val//10
+print(f"product of digit: {pro}")    
+    
