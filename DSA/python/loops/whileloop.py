@@ -11,9 +11,9 @@ print(f"digit count: {d}")
 #sum of digit
 Sum=0
 while temp>0:
-    s=temp%10 #mod-get last value
+    s=temp%10 # modget last value
     Sum+=s
-    temp=temp//10 #div-cutoff last value
+    temp=temp//10 # div-cutoff last value
 print(f"sum of digit: {Sum}")  
 
 #product of digit
