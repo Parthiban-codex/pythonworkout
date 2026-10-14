@@ -17,8 +17,6 @@ class tree:
         self.right and self.right.postorder()   
         print(self.root, end=" ") 
 
-
-
 root = tree(1)
 root.left = tree(2)
 root.left.left = tree(4)
