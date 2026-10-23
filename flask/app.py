@@ -6,7 +6,8 @@ def p():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password=os.environ.get("MYPASSWORD"),
+        password= mypass ,
+        # password=os.environ.get("MYPASSWORD"),
         database="col"
     )
 html="""

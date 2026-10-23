@@ -7,7 +7,7 @@ def h():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password=os.environ.get("MYPASSWORD"),
+        password=mypass,
         database="col"
     )
 
